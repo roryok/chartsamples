@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+        <title>Hello World!</title>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://unpkg.com/chartkick@2.3.3"></script>
+        <script src="https://unpkg.com/vue-chartkick@0.2.1/dist/vue-chartkick.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+        <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+        <line-chart :colors="['#b00', '#666']" :download="true" :data="chartData"></line-chart>
+        <p>chartkick line-chart component, using vue-chartjs and chartjs under the hood. set with custom colors, and downloadable image. this also pulls chartData from the vue instance data object</p>
+        <hr>
+        <pie-chart :donut="true" :data="[['Blueberry', 44], ['Strawberry', 23]]"></pie-chart>
+        <p>chartkick pie chart set to donut mode</p>
+        <p>chartkick is cool for simple charts, but making more nuanced style changes requires dropping down to vue-chartjs</p>
+        <hr>
+        <geo-chart :data="[['United States', 44], ['Germany', 23], ['Brazil', 22]]"></geo-chart>
+        <p>this chartkick geochart uses google charts, proving you can mix and match on the same page</p>
+        <hr>
+        <teamwork-commit-chart></teamwork-commit-chart>
+        <p>commit chart is a custom vue-chartjs component I created from a sample, to see how easy it was. answer: very =)</p>
+        <hr>
+        <teamwork-donut :labels="['Billable', 'Non-Billable']" :data="[60,80]" :colors="['#ccc','#6179d7']"></teamwork-donut>
+        <p>here's a teamwork donut chart made up to look like one from brad's mockups</p>
+    </div>
+
+    <script src="./app/main.js"></script>
+
+</body>
+</html>
